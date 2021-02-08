@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <script src="https://kit.fontawesome.com/e806aa3297.js" crossorigin="anonymous"></script>
-        <title>Oh my food</title>
-        <link rel="stylesheet" href="styles.css" />
+        <title>Oh My Food</title>
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
         <div class="load_spinner"></div>
@@ -19,33 +19,34 @@
                     <div class="city">
                         <p class="location"><i id="here" class="fas fa-map-marker-alt"></i>Paris, Belleville</p>
                     </div>
-                    <div class="">
-                        <h2>Réservez le menu qui vous convient</h2>
-                        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                        <input class="exploration" type="button" value="Explorer nos restaurants">
+                    <div class="search_restaurant">
+                        <h2>Réservez le menu qui<br>vous convient</h2>
+                        <p class="search_text">Découvrez des restaurants d'exception,<br>sélectionnés par nos soins</p>
+                        <input class="btn" type="button" value="Explorer nos restaurants">
                     </div>
                 </div>
                 <div class="manual_container">
                     <h2>Fonctionnement</h2>
                     <div class="filter">
-                        <span>1</span>
+                        <span class="filter_number">1</span>
                         <i class="fas fa-mobile-alt"></i>
                         <span class="filter_text">Choisissez un restaurant</span>
                     </div>
                     <div class="filter">
-                        <span>2</span>
+                        <span class="filter_number">2</span>
                         <i class="fas fa-list-ul"></i>
                         <span class="filter_text">Composez votre menu</span>
                     </div>
                     <div class="filter">
-                        <span>3</span>
+                        <span class="filter_number">3</span>
                         <i class="fas fa-store"></i>
                         <span class="filter_text">Dégustez au restaurant</span>
                     </div>
                 </div>
                 <section class="restaurants">
                     <h2>Restaurants</h2>
-                   <a href="palette.html"> 
+                    <div class="cards_container"></div>
+                    <a href="palette.html"> 
                        <article class="card">
                             <img class="card_image" src="images/restaurants/palette_jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="palette du goût"/>
                             <div class="card_tag">Nouveau</div>
@@ -99,8 +100,8 @@
                 <footer class="footer_container">
                     <img class="logo_title" src="images/logo/ohmyfood@2x.svg" alt="Logo de Ohmyfood">
                     <ul>
-                        <li><p><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</p></a></li>
-                        <li><p><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</p></a></li>
+                        <li><a href="#"><p><i class="fas fa-utensils"></i>Proposer un restaurant</p></a></li>
+                        <li><a href="#"><p><i class="fas fa-hands-helping"></i>Devenir partenaire</p></a></li>
                         <li><p>Mentions légales</p></li>
                         <li><p>Contact</p></li>
                     </ul>
