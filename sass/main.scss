@@ -1,10 +1,12 @@
 $color-primary: #9345DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-new: #269D80;
 $color-text: #606060;
 $grey: #eaeaea;
 $light-grey: #f6f6f6;
 $dark-grey: #d5d5d5;
+$light-black:#353535;
 $font-primary: Shrikhand, sans-serif;
 $font-secondary: Roboto, sans-serif;
  
@@ -32,20 +34,21 @@ $font-secondary: Roboto, sans-serif;
  }
 
  h1 {
-     font-size: 1.5rem;
+     font-size: rem;
      font-weight: bold;
  }
 
  h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     padding: 0 2rem 0 2rem; 
-    margin: 0;
+    margin: 1rem 0 2rem 0;
  }
 
  h3, .filter_text {
-    font-size: 0.8rem;
-    font-weight: bold;
+   font-size: 2.5rem;
+   font-weight: bold;
+   margin-left: 1rem;
  }
 
  h4 {
@@ -59,7 +62,6 @@ $font-secondary: Roboto, sans-serif;
 
  .fas {
    display : inline-block;
-   padding-right: 1rem;
    font-size: 1.2rem;
  }
  
@@ -86,7 +88,7 @@ $font-secondary: Roboto, sans-serif;
 }
 
 .location {
-   font-size: 1.5rem;
+   font-size: 1.8rem;
    margin: 0.8rem 0 1.1rem 0;
 }
 
@@ -102,6 +104,7 @@ $font-secondary: Roboto, sans-serif;
    padding: 0 2rem;
    border-radius: 5rem;
    font-size: 1.8rem;
+   margin-bottom: 1rem;
    &:hover {
       cursor: pointer;
       text-decoration: none;
@@ -128,9 +131,10 @@ $font-secondary: Roboto, sans-serif;
    display: block;
    position: relative;
    background-color: $light-grey; 
-   margin: 2rem 2rem 2rem 4rem;
-   border-radius: 2.5rem;
-   padding: 2rem;
+   margin: 2rem 2rem 2rem 3rem;
+   border-radius: 2rem;
+   padding: 2.5rem;
+   box-shadow: 0 0.5rem 0.5rem $dark-grey;
    &:hover {
       cursor: pointer;
       background-color: rgba($color-primary, .15);
@@ -140,23 +144,28 @@ $font-secondary: Roboto, sans-serif;
 .filter_number {
    position: absolute;
    display: flex;
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    align-items: center;
-   background-color: $color-primary;
    border-radius: 50%;
-   padding: 0 0.5rem;
+   background-color: $color-primary;
+   padding: 0.8rem 1.2rem;
+   left: -20px;
    color: white;
 }
 
 i {
    font-size: 1.2rem;
    color: grey;
-   margin: auto 1.5rem auto 2.5rem;
+   margin: auto 1.5rem auto 1.5rem;
+}
+
+.filter .fas {
+   position: relative;
 }
 
 .filter_text {
-   width: 100%;
-   padding-left: 5rem;
+   position: relative;
+   font-size: 0.8rem;
 }
 
 .restaurants {
@@ -172,13 +181,14 @@ i {
 }
 
 .card {
+   position: relative;
    background-color: white;
-   padding: 0.5rem;
    border-radius: 1.5rem;
    transition-duration: 0.1s;
+   margin: 1.5rem;
    cursor: pointer;
    height: 100%;
-   width: 100%;
+   width: 95%;
 }
 
 .card:hover {
@@ -186,14 +196,63 @@ i {
 }
 
 .card_image {
-   height: 7rem;
-   max-width: 500px;
+   position: relative;
+   height: 30rem;
+   max-width: 1000px;
    width: 100%;
-   max-height: 100%;
-   border-radius:0 0 1.5rem 1.5rem;
+   object-fit: cover;
+   border-radius: 1.5rem 1.5rem 0 0;
 }
 
-.card_image {
-   width: 100%;
-   height: 175px;
+.card_tag {
+   position: absolute;
+   border-radius: 0.2rem;
+   background-color: $color-tertiary;
+   color: $color-new;
+   right: 1rem;
+   top: 1rem;
+   padding: 0.7rem;
+   font-size: 2rem;
 }
+
+.card_container {
+   padding-bottom: 2rem;
+   p {
+      font-size: 2rem;
+      margin: 0.5rem 1rem 0 2rem;
+      padding: 0;
+   }
+   h3 {
+      margin: 1rem 1rem 0 2rem;
+      padding: 0;
+   }
+   .heart {
+      position: absolute;
+      right: 1rem;
+      bottom: 3rem;
+      .far {
+         font-size: 3rem;
+      } 
+   }
+}
+
+.footer_container {
+   background-color: $light-black;
+   padding: 2rem;
+   p, .fas {
+      color:white;
+   }
+   .logo_title {
+      filter: invert(100%);
+      margin: 1rem 1rem 1rem 3rem;
+      font-size: 4rem;
+   }
+   ul li {
+      list-style-type: none;
+      padding: 0.1rem;
+   }
+   .fas {
+      margin: 0 1rem 0 0;
+   }
+}
+
