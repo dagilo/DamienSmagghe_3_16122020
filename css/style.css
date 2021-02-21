@@ -18,23 +18,23 @@ a {
 
 p {
   color: #606060;
-  font-size: 0.8rem;
+  font-size: 1.4rem;
 }
 
 h1 {
-  font-size: rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   padding: 0 2rem 0 2rem;
   margin: 1rem 0 2rem 0;
 }
 
 h3, .filter_text {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-left: 1rem;
 }
@@ -50,22 +50,23 @@ h5 {
 
 .fas {
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 
 header, main, footer {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
-.logo_container, .place_container .manual_container {
+.logo_container {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 97%;
+  padding: 1rem;
 }
 
 .logo_image {
-  display: flex;
   margin: 1rem 0 1rem 0;
   height: 3rem;
 }
@@ -116,12 +117,14 @@ header, main, footer {
 }
 
 .filter {
-  display: block;
+  display: inline-flex;
+  width: 90%;
+  height: 6rem;
   position: relative;
   background-color: #f6f6f6;
-  margin: 2rem 2rem 2rem 3rem;
-  border-radius: 2rem;
-  padding: 2.5rem;
+  margin: 1rem 2rem 1rem 3rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
   box-shadow: 0 0.5rem 0.5rem #d5d5d5;
 }
 .filter:hover {
@@ -136,29 +139,35 @@ header, main, footer {
   align-items: center;
   border-radius: 50%;
   background-color: #9345DC;
-  padding: 0.8rem 1.2rem;
-  left: -20px;
+  padding: 0.7rem 1.2rem;
+  left: -27px;
+  top: 30px;
   color: white;
 }
 
-i {
-  font-size: 1.2rem;
+.manual_container i {
   color: grey;
   margin: auto 1.5rem auto 1.5rem;
+  display: block;
+  font-size: 2.5rem;
+  top: 33px;
+  left: 23px;
 }
 
 .filter .fas {
-  position: relative;
+  position: absolute;
+  font-size: 2.5rem;
 }
 
 .filter_text {
   position: relative;
-  font-size: 0.8rem;
+  padding: 2rem 2rem 2rem 6rem;
+  font-size: 1.9rem;
 }
 
 .restaurants {
   background-color: #f6f6f6;
-  padding: 4rem 2rem 4rem 2rem;
+  padding: 4rem 0 4rem 0;
 }
 
 .cards_container {
@@ -173,10 +182,10 @@ i {
   background-color: white;
   border-radius: 1.5rem;
   transition-duration: 0.1s;
-  margin: 1.5rem;
+  margin: 2.5rem;
   cursor: pointer;
   height: 100%;
-  width: 95%;
+  width: 91%;
 }
 
 .card:hover {
@@ -196,6 +205,7 @@ i {
   position: absolute;
   border-radius: 0.2rem;
   background-color: #99E2D0;
+  font-weight: bold;
   color: #269D80;
   right: 1rem;
   top: 1rem;
@@ -217,7 +227,7 @@ i {
 }
 .card_container .heart {
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   bottom: 3rem;
 }
 .card_container .heart .far {
@@ -227,9 +237,13 @@ i {
 .footer_container {
   background-color: #353535;
   padding: 2rem;
+  margin: 0;
 }
 .footer_container p, .footer_container .fas {
   color: white;
+}
+.footer_container p {
+  margin: 0.5rem 0 0.5rem 0;
 }
 .footer_container .logo_title {
   filter: invert(100%);
@@ -242,6 +256,13 @@ i {
 }
 .footer_container .fas {
   margin: 0 1rem 0 0;
+  position: absolute;
+}
+.footer_container .footer_text {
+  padding-left: 5rem;
+}
+.footer_container .footer_text, .footer_container .footer_text2 {
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

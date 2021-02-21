@@ -30,23 +30,23 @@ $font-secondary: Roboto, sans-serif;
 
  p{
      color: $color-text;
-     font-size: 0.8rem;
+     font-size: 1.4rem;
  }
 
  h1 {
-     font-size: rem;
+     font-size: 2rem;
      font-weight: bold;
  }
 
  h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     padding: 0 2rem 0 2rem; 
     margin: 1rem 0 2rem 0;
  }
 
  h3, .filter_text {
-   font-size: 2.5rem;
+   font-size: 2rem;
    font-weight: bold;
    margin-left: 1rem;
  }
@@ -62,22 +62,23 @@ $font-secondary: Roboto, sans-serif;
 
  .fas {
    display : inline-block;
-   font-size: 1.2rem;
+   font-size: 2.5rem;
+   margin-right: 1rem;
  }
  
  header, main, footer {
     display: block;
-    width: 100%;
+    max-width: 100%;
  }
 
-.logo_container, .place_container .manual_container{
+.logo_container {
    display: flex;
    justify-content: center;
-   width: 100%;
+   width: 97%;
+   padding: 1rem;
 }
 
 .logo_image {
-   display: flex;
    margin: 1rem 0 1rem 0;
    height: 3rem;
 }
@@ -128,13 +129,15 @@ $font-secondary: Roboto, sans-serif;
 }
 
 .filter {
-   display: block;
+   display: inline-flex;
+   width: 90%;
+   height: 6rem;
    position: relative;
-   background-color: $light-grey; 
-   margin: 2rem 2rem 2rem 3rem;
-   border-radius: 2rem;
-   padding: 2.5rem;
-   box-shadow: 0 0.5rem 0.5rem $dark-grey;
+   background-color: #f6f6f6;
+   margin: 1rem 2rem 1rem 3rem;
+   border-radius: 1.5rem;
+   padding: 0.5rem;
+   box-shadow: 0 0.5rem 0.5rem #d5d5d5;
    &:hover {
       cursor: pointer;
       background-color: rgba($color-primary, .15);
@@ -147,30 +150,36 @@ $font-secondary: Roboto, sans-serif;
    font-size: 1.5rem;
    align-items: center;
    border-radius: 50%;
-   background-color: $color-primary;
-   padding: 0.8rem 1.2rem;
-   left: -20px;
+   background-color: #9345DC;
+   padding: 0.7rem 1.2rem;
+   left: -27px;
+   top: 30px;
    color: white;
 }
 
-i {
-   font-size: 1.2rem;
+.manual_container i {
    color: grey;
    margin: auto 1.5rem auto 1.5rem;
+   display: block;
+   font-size: 2.5rem;
+   top: 33px;
+   left: 23px;
 }
 
 .filter .fas {
-   position: relative;
+   position: absolute;
+   font-size: 2.5rem;
 }
 
 .filter_text {
    position: relative;
-   font-size: 0.8rem;
+   padding: 2rem 2rem 2rem 6rem;
+   font-size: 1.9rem;
 }
 
 .restaurants {
    background-color: $light-grey;
-   padding: 4rem 2rem 4rem 2rem;
+   padding: 4rem 0 4rem 0;
 }
 
 .cards_container {
@@ -185,10 +194,10 @@ i {
    background-color: white;
    border-radius: 1.5rem;
    transition-duration: 0.1s;
-   margin: 1.5rem;
+   margin: 2.5rem;
    cursor: pointer;
    height: 100%;
-   width: 95%;
+   width: 91%;
 }
 
 .card:hover {
@@ -208,6 +217,7 @@ i {
    position: absolute;
    border-radius: 0.2rem;
    background-color: $color-tertiary;
+   font-weight: bold;
    color: $color-new;
    right: 1rem;
    top: 1rem;
@@ -228,7 +238,7 @@ i {
    }
    .heart {
       position: absolute;
-      right: 1rem;
+      right: 2rem;
       bottom: 3rem;
       .far {
          font-size: 3rem;
@@ -239,8 +249,12 @@ i {
 .footer_container {
    background-color: $light-black;
    padding: 2rem;
+   margin: 0;
    p, .fas {
       color:white;
+   }
+   p {
+      margin: 0.5rem 0 0.5rem 0;
    }
    .logo_title {
       filter: invert(100%);
@@ -253,6 +267,13 @@ i {
    }
    .fas {
       margin: 0 1rem 0 0;
+      position: absolute;
+   }
+   .footer_text {
+      padding-left: 5rem;
+   }
+   .footer_text, .footer_text2 {
+      font-size: 1rem;
    }
 }
 
