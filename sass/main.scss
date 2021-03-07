@@ -73,14 +73,53 @@ $font-secondary: Roboto, sans-serif;
  }
 
  .fas {
+   position: absolute;
    display : inline-block;
-   font-size: 2.5rem;
+   font-size: 3rem;
    margin-right: 1rem;
  }
  
  header, main, footer {
     display: block;
     max-width: 100%;
+ }
+
+ .load_page {
+   position: fixed;
+   z-index: 99999;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   visibility: hidden;
+   transition: visibility 3s;
+   &--spinner {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 200px;
+      border: 5px solid #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::after {
+         content: "";
+         position: absolute;
+         top: -5px;
+         left: -5px;
+         right: -5px;
+         bottom: -5px;
+         border: 5px solid transparent;
+         border-radius: 200px;
+         border-top-color: #000;
+         border-bottom-color: #9356dc;
+      }
+   }
  }
 
 .logo_container {
@@ -244,6 +283,7 @@ $font-secondary: Roboto, sans-serif;
 }
 
 .card_container {
+   position: relative;
    padding-bottom: 2rem;
    p {
       font-size: 2rem;
@@ -260,7 +300,12 @@ $font-secondary: Roboto, sans-serif;
       bottom: 3rem;
       .far {
          font-size: 3rem;
-      } 
+         z-index: 50;
+      }
+      .fas {
+         background: linear-gradient($color-primary, $color-secondary);
+         transition: opacity 500ms;
+      }
    }
    &--page {
       position: relative;
