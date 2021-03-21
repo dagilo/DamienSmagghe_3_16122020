@@ -9,82 +9,159 @@ $dark-grey: #d5d5d5;
 $light-black:#353535;
 $font-primary: Shrikhand, sans-serif;
 $font-secondary: Roboto, sans-serif;
- 
- body {
+$btn1-shadow-hover: 0 5px 15px 0 darken($grey, 35);
+
+@keyframes spin {
+   from {
+       transform:rotate(0deg);
+   }
+   to {
+       transform:rotate(360deg);
+   }
+}
+
+@keyframes check-box {
+   10% {
+      transform: rotate(-90deg);
+   }
+   20% {
+      transform: rotate(-75deg) scale(1.03);
+   }
+   40% {
+      transform: rotate(-60deg) scale(1.08);
+   }
+   60% {
+      transform: rotate(-45deg) scale(1.15);
+   }
+   80% {
+      transform: rotate(-30deg) scale(1.08);
+   }
+   100% {
+      transform: rotate(-5deg) scale(1);
+   }
+}
+
+@keyframes caption-check-box {
+   0% {
+      opacity: 0.5;
+      transform: translate(50px, 0);
+   }
+   20% {
+      opacity: 0.6;
+      transform: translate(30px, 0);
+   }
+   40% {
+      opacity: 0.7;
+      transform: translate(20px, 0);
+   }
+   60% {
+      opacity: 0.8;
+      transform: translate(15px, 0);
+   }
+   80% {
+      opacity: 0.9;
+      transform: translate(7px, 0);
+   }
+   100% {
+      opacity: 1;
+      transform: translate(1px, 0);
+   }
+}
+
+@keyframes caption-check-box-price {
+   0% {
+      transform: translate(50px, 0);
+   }
+   40% {
+      transform: translate(25px, 0);
+   }
+   70% {
+      transform: translate(12px, 0);
+   }
+   100% {
+      transform: translate(1px, 0);
+   }
+}
+
+body {
    font-family: $font-secondary;
    color: #000000;
    width: 100%;
    max-width: 1440px;
    padding: 0;
    margin: 0;
- }
+}
  
- h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
    font-family: $font-primary;
- }
+}
  
- a {
-     color: inherit;
-     text-decoration: none;
+a {
+   color: inherit;
+   text-decoration: none;
+   }
+
+p {
+   color: $color-text;
+   font-size: 1.4rem;
  }
 
- p{
-     color: $color-text;
-     font-size: 1.4rem;
- }
-
- h1 {
-     font-size: 4rem;
-     font-weight: bold;
+h1 {
+   font-size: 4rem;
+   font-weight: bold;
+   margin: 1rem 0 2rem 2rem;
      margin: 1rem 0 2rem 2rem; 
- }
+   margin: 1rem 0 2rem 2rem;
+}
 
- h2 {
-    font-size: 2rem;
-    font-weight: bold;
+h2 {
+   font-size: 2rem;
+   font-weight: bold;
+   padding: 0 2rem 0 2rem; 
     padding: 0 2rem 0 2rem; 
-    margin: 1rem 0 2rem 0;
- }
+   padding: 0 2rem 0 2rem; 
+   margin: 1rem 0 2rem 0;
+}
 
- h3, .filter_text {
+h3, .filter_text {
    font-size: 2rem;
    font-weight: bold;
    margin-left: 1rem;
- }
+}
 
- h4 {
-    font-size: 1.1rem;
- }
+h4 {
+   font-size: 1.1rem;
+}
 
- h5 {
-    font-size: 1.3rem;
-    font-weight: lighter;
-    text-transform: uppercase;
-    margin: 2rem 0 0 2rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
- }
+h5 {
+   font-size: 1.3rem;
+   font-weight: lighter;
+   text-transform: uppercase;
+   margin: 2rem 0 0 2rem;
+   padding-top: 2rem;
+   padding-bottom: 1rem;
+}
 
  hr {
-    border: none;
-    border-bottom: 0.5rem solid $color-tertiary;
-    width: 100px;
-    margin: 0 0 1rem 2rem;
- }
+   border: none;
+   border-bottom: 0.5rem solid $color-tertiary;
+   width: 100px;
+   margin: 0 0 1rem 2rem;
+}
 
- .fas {
+.fas {
    position: absolute;
    display : inline-block;
    font-size: 3rem;
    margin-right: 1rem;
- }
+}
  
- header, main, footer {
-    display: block;
-    max-width: 100%;
+header, main, footer {
+   display: block;
+   max-width: 100%;
  }
 
- .load_page {
+.load_page {
    position: fixed;
    z-index: 99999;
    top: 0;
@@ -94,7 +171,9 @@ $font-secondary: Roboto, sans-serif;
    height: 100%;
    background: #fff;
    display: flex;
+   -webkit-box-pack: center;
    justify-content: center;
+   -webkit-box-align:center;
    align-items: center;
    visibility: hidden;
    transition: visibility 3s;
@@ -105,7 +184,9 @@ $font-secondary: Roboto, sans-serif;
       border-radius: 200px;
       border: 5px solid #f2f2f2;
       display: flex;
+      -webkit-box-pack: center;
       justify-content: center;
+      -webkit-box-align:center;
       align-items: center;
       &::after {
          content: "";
@@ -118,9 +199,13 @@ $font-secondary: Roboto, sans-serif;
          border-radius: 200px;
          border-top-color: #000;
          border-bottom-color: #9356dc;
+         animation-name: spin;
+         animation-duration: 5000ms;
+         animation-iteration-count: infinite;
+         animation-timing-function: linear;
       }
    }
- }
+}
 
 .logo_container {
    display: flex;
@@ -142,6 +227,9 @@ $font-secondary: Roboto, sans-serif;
 .location {
    font-size: 1.8rem;
    margin: 0.8rem 0 1.1rem 0;
+   .fas {
+      position: relative;
+   }
 }
 
 .search_text {
@@ -294,42 +382,29 @@ $font-secondary: Roboto, sans-serif;
       margin: 1rem 1rem 0 2rem;
       padding: 0;
    }
-   .heart {
-      position: absolute;
-      right: 2rem;
-      bottom: 3rem;
-      .far {
-         font-size: 3rem;
-         z-index: 50;
-      }
-      .fas {
-         background: linear-gradient($color-primary, $color-secondary);
-         transition: opacity 500ms;
-      }
-   }
-   &--page {
+   &--page{
       position: relative;
       background-color: white;
       border-radius: 1rem;
       margin: 2rem;
       padding: 1rem;
       box-shadow: 0 0.5rem 0.5rem #d5d5d5;
+   p {
+      margin: 0 0 0.5rem 0.5rem;
+   }
+   .price {
+      position: absolute;
+      font-weight: bold;
+      right: 2rem;
+      top: 3rem;
       p {
-         margin: 0 0 0.5rem 0.5rem;
-      }
-      .price {
-         position: absolute;
-         font-weight: bold;
-         right: 2rem;
-         top: 3rem;
-         p {
-            font-size: 2.5rem;
-         }
-      }
-      h3 {
-         margin: 0.5rem 0 0.5rem 0.5rem;
+         font-size: 2.5rem;
       }
    }
+   h3 {
+      margin: 0.5rem 0 0.5rem 0.5rem;
+   }
+}
 }
 
 .footer_container {
@@ -400,3 +475,120 @@ $font-secondary: Roboto, sans-serif;
    justify-content: center;
 }
 
+.heart {
+.hover-icon {
+   left: 0;
+   opacity: 0;
+   position: absolute;
+}
+i {
+   left: 50%;
+}
+&:hover {
+   cursor: pointer;
+   overflow: hidden;
+.default-icon {
+   opacity: 0;
+   transition: 1s 0.5s ease;
+}
+.hover-icon {
+   background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+   -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+   opacity: 1;
+   transition: 1s 1s ease;
+   z-index: 999;
+}
+}
+}
+
+.card-menu {
+   border-radius: 15px;
+   cursor: pointer;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   overflow: hidden;
+
+   hgroup {
+      flex:1;
+      overflow: hidden;
+      padding: 10px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+
+   h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+
+   p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+}
+
+.caption-check-box {
+   border-bottom-right-radius: 15px;
+   border-top-right-radius: 15px;
+   display: none;
+   position: relative;
+   i{
+      color: white;
+      font-size: 24px;
+      transform: rotate(360deg);
+   }
+   .price {
+      align-items: center;
+      display: flex;
+      font-size: 1.125rem;
+      font-weight: bold;
+      justify-content: flex-end;
+      padding-right: 10px;
+      text-align: right;
+   }
+}
+
+
+//Menu cards CSS
+
+.card-menu {
+   &:hover {
+      box-shadow: $btn1-shadow-hover;
+   hgroup {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+   .price {
+      animation: caption-check-box-price ease 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      min-width: 50px;
+   }
+   .caption-check-box {
+      animation: caption-check-box ease 3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      background-color: $color-tertiary;
+      display: block;
+      flex: 0 0 15%;
+      max-width: 50px;
+      overflow: hidden;
+      transform-origin: 50% 50%;
+   }
+   .fa-check-circle {
+      animation: check-box ease .5s;
+      animation-iteration-count: 1;
+      background-color: $color-tertiary;
+      left: 27%;
+      position: absolute;
+      top: 30%;
+   }
+}
+}
