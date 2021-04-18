@@ -20,6 +20,18 @@ $btn1-shadow-hover: 0 5px 15px 0 darken($grey, 35);
    }
 }
 
+@keyframes spin {
+   0% {
+      opacity:1;
+   }
+   80%{
+      opacity:0,5;
+   }
+   100%{
+      opacity:0;
+   }
+}
+
 @keyframes check-box {
    10% {
       transform: rotate(-90deg);
@@ -103,22 +115,18 @@ a {
 
 p {
    color: $color-text;
-   font-size: 1.4rem;
+   font-size: 1rem;
  }
 
 h1 {
-   font-size: 4rem;
+   font-size: 3rem;
    font-weight: bold;
-   margin: 1rem 0 2rem 2rem;
-     margin: 1rem 0 2rem 2rem; 
    margin: 1rem 0 2rem 2rem;
 }
 
 h2 {
    font-size: 2rem;
    font-weight: bold;
-   padding: 0 2rem 0 2rem; 
-    padding: 0 2rem 0 2rem; 
    padding: 0 2rem 0 2rem; 
    margin: 1rem 0 2rem 0;
 }
@@ -134,7 +142,7 @@ h4 {
 }
 
 h5 {
-   font-size: 1.3rem;
+   font-size: 1.4rem;
    font-weight: lighter;
    text-transform: uppercase;
    margin: 2rem 0 0 2rem;
@@ -216,7 +224,7 @@ header, main, footer {
 
 .logo_image {
    margin: 1rem 0 1rem 0;
-   height: 3rem;
+   height: 2rem;
 }
 
 .place_container {
@@ -387,7 +395,7 @@ header, main, footer {
       background-color: white;
       border-radius: 1rem;
       margin: 2rem;
-      padding: 1rem;
+      padding: 0rem;
       box-shadow: 0 0.5rem 0.5rem #d5d5d5;
    p {
       margin: 0 0 0.5rem 0.5rem;
@@ -396,9 +404,9 @@ header, main, footer {
       position: absolute;
       font-weight: bold;
       right: 2rem;
-      top: 3rem;
+      top: 2rem;
       p {
-         font-size: 2.5rem;
+         font-size: 1.5rem;
       }
    }
    h3 {
@@ -415,7 +423,7 @@ header, main, footer {
       color:white;
    }
    p {
-      margin: 0.5rem 0 0.5rem 0;
+      margin: 1rem 0 1rem 0;
    }
    .logo_title {
       filter: invert(100%);
@@ -447,8 +455,8 @@ header, main, footer {
 
 .heart--page {
    position: absolute;
-   font-size: 4rem;
-   right: 4rem;
+   font-size: 3rem;
+   right: 3rem;
    top: 3rem;
 }
 
@@ -475,7 +483,7 @@ header, main, footer {
    justify-content: center;
 }
 
-.heart {
+.heart, .heart--page {
 .hover-icon {
    left: 0;
    opacity: 0;
@@ -566,13 +574,13 @@ i {
       white-space: nowrap;
    }
    .price {
-      animation: caption-check-box-price ease 3s;
+      animation: caption-check-box-price ease 1s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       min-width: 50px;
    }
    .caption-check-box {
-      animation: caption-check-box ease 3s;
+      animation: caption-check-box ease 1s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
@@ -586,7 +594,7 @@ i {
       animation: check-box ease .5s;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
-      left: 27%;
+      left: 40%;
       position: absolute;
       top: 30%;
    }
