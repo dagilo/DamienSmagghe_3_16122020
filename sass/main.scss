@@ -95,6 +95,7 @@ $btn1-shadow-hover: 0 5px 15px 0 darken($grey, 35);
    }
 }
 
+
 body {
    font-family: $font-secondary;
    color: #000000;
@@ -594,7 +595,7 @@ i {
       animation: check-box ease .5s;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
-      left: 40%;
+      left: 27%;
       position: absolute;
       top: 30%;
    }
