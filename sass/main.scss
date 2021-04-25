@@ -1,7 +1,10 @@
-@import "./base/animations.scss";
-@import "./base/typography.scss";
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+@import "./utils/maps.scss";
 
-@import "./components/loader.scss";
+@import "./base/typography.scss";
+@import "./base/animations.scss";
+@import "./base/base.scss";
 
 @import "./layout/header.scss";
 @import "./layout/footer.scss";
@@ -9,129 +12,7 @@
 @import "./pages/home.scss";
 @import "./pages/menus.scss";
 
-@import "./utils/maps.scss";
-@import "./utils/mixins.scss";
-@import "./utils/variables.scss";
-
-body {
-   font-family: $font-secondary;
-   color: #000000;
-   width: 100%;
-   max-width: 1440px;
-   padding: 0;
-   margin: 0;
-}
- 
-h1, h2, h3, h4, h5 {
-   font-family: $font-secondary;
-}
- 
-a {
-   color: inherit;
-   text-decoration: none;
-   }
-
-p {
-   color: $color-text;
-   font-size: 1rem;
- }
-
-h1 {
-   font-size: 3rem;
-   font-weight: bold;
-   margin: 1rem 0 2rem 2rem;
-}
-
-h2 {
-   font-size: 2rem;
-   font-weight: bold;
-   padding: 0 2rem 0 2rem; 
-   margin: 1rem 0 2rem 0;
-}
-
-h3, .filter_text {
-   font-size: 2rem;
-   font-weight: bold;
-   margin-left: 1rem;
-}
-
-h4 {
-   font-size: 1.1rem;
-}
-
-h5 {
-   font-size: 1.4rem;
-   font-weight: lighter;
-   text-transform: uppercase;
-   margin: 2rem 0 0 2rem;
-   padding-top: 2rem;
-   padding-bottom: 1rem;
-}
-
-hr {
-   border: none;
-   border-bottom: 0.5rem solid $color-tertiary;
-   width: 100px;
-   margin: 0 0 1rem 2rem;
-}
-
-.fas {
-   position: absolute;
-   display : inline-block;
-   font-size: 3rem;
-   margin-right: 1rem;
-}
- 
-header, main, footer {
-   display: block;
-   max-width: 100%;
- }
-
-.load_page {
-   position: fixed;
-   z-index: 99999;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   height: 100%;
-   background: #fff;
-   display: flex;
-   -webkit-box-pack: center;
-   justify-content: center;
-   -webkit-box-align:center;
-   align-items: center;
-   visibility: hidden;
-   transition: visibility 3s;
-   &--spinner {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      border-radius: 200px;
-      border: 5px solid #f2f2f2;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align:center;
-      align-items: center;
-      &::after {
-         content: "";
-         position: absolute;
-         top: -5px;
-         left: -5px;
-         right: -5px;
-         bottom: -5px;
-         border: 5px solid transparent;
-         border-radius: 200px;
-         border-top-color: #000;
-         border-bottom-color: #9356dc;
-         animation-name: spin;
-         animation-duration: 5000ms;
-         animation-iteration-count: infinite;
-         animation-timing-function: linear;
-      }
-   }
-}
+@import "./components/loader.scss";
 
 .logo_container {
    display: flex;
@@ -338,15 +219,6 @@ header, main, footer {
    animation-delay: $anim-big-delay + $anim-delay;
 }
 
-.menu__parts {
-   animation: menu-intro $anim-duration backwards;
-   @for $i from 1 through 3 {
-      &--#{$i} {
-         animation-delay: $anim-delay * $i;
-      }
-   }
-}
-
 .heart {
    position: absolute;
    font-size: 3rem;
@@ -462,7 +334,6 @@ i {
    }
 }
 
-
 //Menu cards CSS
 
 .card-menu {
@@ -475,24 +346,24 @@ i {
       white-space: nowrap;
    }
    .price {
-      animation: caption-check-box-price ease 1s;
+      animation: caption-check-box-price ease .3s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
-      min-width: 50px;
+      min-width: 100px;
    }
    .caption-check-box {
-      animation: caption-check-box ease 1s;
+      animation: caption-check-box ease .3s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
       display: block;
       flex: 0 0 15%;
-      max-width: 50px;
+      max-width: 70px;
       overflow: hidden;
       transform-origin: 50% 50%;
    }
    .fa-check-circle {
-      animation: check-box ease .5s;
+      animation: check-box ease .3s;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
       left: 27%;
@@ -501,7 +372,6 @@ i {
    }
 }
 }
-
 
 .footer_container {
    background-color: $light-black;
@@ -532,88 +402,4 @@ i {
    .footer_text, .footer_text2 {
       font-size: 1rem;
    }
-}
-
-/* LOADER */
-$cd-bars: #15DEA5;
-$num-items : 4;
-$anim-dur: 800ms;
-$anim-delay: $anim-dur / $num-items;
-
-
-@keyframes item {
-  0% {
-      transform: scaleX(0.5);
-  }
-  100% {
-      transform: scaleX(0);
-  }
-}
-
-@keyframes loader {
-  0% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0;
-  }
-}
-
-@keyframes page-visibility {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.container_loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #353535;
-  width: 100vw;
-  max-height: 100%;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  animation: loader 10ms ease-out 3000ms forwards;
-}
-
-.loader {
-  width: 70%;
-  //height: 100px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 100px;
-  &__item {
-    height:20px;
-    border-radius: 10vh;
-    margin-bottom: 10px;
-    animation: item $anim-dur backwards 4 ease-in-out alternate-reverse;
-      @for $i from 1 through $num-items {
-        &--#{$i} {
-        animation-delay: $anim-delay * $i;
-        }
-      }
-  }
-    
-  &__item--1 {
-    background-color: $cd-bars;
-  }
-  &__item--2 {
-    background-color: $color-primary;
-  }
-  &__item--3 {
-    background-color: $color_secondary;
-  }
-  &__item--4 {
-    background-color: $color_tertiary;
-  }
-}
-
-.homepage {
-  opacity: 1;
-  animation: page-visibility 10ms ease-in 3000ms both;
 }

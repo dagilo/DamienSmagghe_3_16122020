@@ -22,17 +22,8 @@
     10% {
        transform: rotate(-90deg);
     }
-    20% {
-       transform: rotate(-75deg) scale(1.03);
-    }
     40% {
        transform: rotate(-60deg) scale(1.08);
-    }
-    60% {
-       transform: rotate(-45deg) scale(1.15);
-    }
-    80% {
-       transform: rotate(-30deg) scale(1.08);
     }
     100% {
        transform: rotate(-5deg) scale(1);
@@ -44,21 +35,9 @@
        opacity: 0.5;
        transform: translate(50px, 0);
     }
-    20% {
-       opacity: 0.6;
-       transform: translate(30px, 0);
-    }
     40% {
        opacity: 0.7;
        transform: translate(20px, 0);
-    }
-    60% {
-       opacity: 0.8;
-       transform: translate(15px, 0);
-    }
-    80% {
-       opacity: 0.9;
-       transform: translate(7px, 0);
     }
     100% {
        opacity: 1;
@@ -70,9 +49,6 @@
     0% {
        transform: translate(50px, 0);
     }
-    40% {
-       transform: translate(25px, 0);
-    }
     70% {
        transform: translate(12px, 0);
     }
@@ -81,3 +57,84 @@
     }
  }
  
+.menu__parts {
+    animation: menu-intro $anim-duration backwards;
+    @for $i from 1 through 3 {
+       &--#{$i} {
+          animation-delay: $anim-delay * $i;
+       }
+    }
+ }
+ 
+ @keyframes item {
+    0% {
+        transform: scaleX(0.5);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+  }
+  
+  @keyframes loader {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+  }
+  
+  @keyframes page-visibility {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .container_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    width: 100vw;
+    max-height: 100%;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    animation: loader 10ms ease-out 3000ms forwards;
+  }
+  
+  .loader {
+    width: 70%;
+    //height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+    &__item {
+      height:20px;
+      border-radius: 10vh;
+      margin-bottom: 10px;
+      animation: item $anim-dur backwards 4 ease-in-out alternate-reverse;
+        @for $i from 1 through $num-items {
+          &--#{$i} {
+          animation-delay: $anim-delay * $i;
+          }
+        }
+    }
+      
+    &__item--1 {
+      background-color: $cd-bars;
+    }
+    &__item--2 {
+      background-color: $color-primary;
+    }
+    &__item--3 {
+      background-color: $color_secondary;
+    }
+    &__item--4 {
+      background-color: $color_tertiary;
+    }
+  }
+

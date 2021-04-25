@@ -12,9 +12,17 @@ $light-black:#353535;
 $font-primary: Shrikhand, sans-serif;
 $font-secondary: Roboto, sans-serif;
 
-$anim-duration: 1s;
+$radius: 11px;
+$button-shadow: 1px 1px 10px #c0bfbf;
+
+$anim-duration: 1.2s;
 $anim-short:0.3s;
 $anim-delay:0.5s;
 $anim-big-delay:2.5s;
 
 $btn1-shadow-hover: 0 5px 15px 0 darken($grey, 35);
+
+$cd-bars: #15DEA5;
+$num-items : 4;
+$anim-dur: 800ms;
+$anim-delay: $anim-dur / $num-items;

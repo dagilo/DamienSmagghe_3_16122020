@@ -1,1 +1,44 @@
-
+.container_loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    width: 100vw;
+    max-height: 100%;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    animation: loader 10ms ease-out 3000ms forwards;
+  }
+  
+  .loader {
+    width: 70%;
+    //height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 100px;
+    &__item {
+      height:20px;
+      border-radius: 10vh;
+      margin-bottom: 10px;
+      animation: item $anim-dur backwards 4 ease-in-out alternate-reverse;
+        @for $i from 1 through $num-items {
+          &--#{$i} {
+          animation-delay: $anim-delay * $i;
+          }
+        }
+    }
+      
+    &__item--1 {
+      background-color: $cd-bars;
+    }
+    &__item--2 {
+      background-color: $color-primary;
+    }
+    &__item--3 {
+      background-color: $color_secondary;
+    }
+    &__item--4 {
+      background-color: $color_tertiary;
+    }
+  }
