@@ -1,0 +1,31 @@
+.footer_container {
+    background-color: $light-black;
+    padding: 2rem;
+    margin: 0;
+    p, .fas {
+       color:white;
+    }
+    p {
+       margin: 1rem 0 1rem 0;
+    }
+    .logo_title {
+       filter: invert(100%);
+       margin: 1rem 1rem 1rem 3rem;
+       font-size: 4rem;
+    }
+    ul li {
+       list-style-type: none;
+       padding: 0.1rem;
+    }
+    .fas {
+       margin: 0 1rem 0 0;
+       position: absolute;
+       font-size: 2rem;
+    }
+    .footer_text {
+       padding-left: 3rem;
+    }
+    .footer_text, .footer_text2 {
+       font-size: 1rem;
+    }
+ }
