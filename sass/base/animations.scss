@@ -85,7 +85,7 @@
     animation: menu-intro $anim-duration backwards;
     @for $i from 1 through 3 {
        &--#{$i} {
-          animation-delay: $anim-delay * $i;
+          animation-delay: $time-delay * $i;
        }
     }
  }

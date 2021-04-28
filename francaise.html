@@ -2,101 +2,159 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
         <script src="https://kit.fontawesome.com/e806aa3297.js" crossorigin="anonymous"></script>
         <title>Oh my food</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <div class="main_container">
+        <div class="main_container--2">
             <header>
                 <div class="logo_container">
-                    <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+                    <a href="index.html"><i id="arrow" class="fas fa-arrow-left"></i></a>
                     <img class="logo_image" src="images/logo/ohmyfood@2x.svg" alt="Logo de Ohmyfood">
                 </div>
             </header>
             <main>
-                <img class="card_image" src="images/restaurants/francaise_toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="palette du goût"/>
-                <section>
-                    <h1>&Agrave la française</h1>
-                    <div class="heart">
-                        <i class="far fa-heart"></i>
+                <img class="card_image--page" src="images/restaurants/francaise_toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="à la francaise"/>
+                <section class="menu--page">
+                    <h1>&#192; la française</h1>
+                    <div class="heart--page">
+                        <i class="far fa-heart default-icon"></i>
+                        <i class="fas fa-heart hover-icon"></i>
                     </div>
+                        <div class=menu__parts menu__parts--1>
                         <h5>Entrées</h5>
-                        <div class="card_container">
-                            <h3>Tartare de poulpe acidulé</h3>
-                            <p>Aux zestes d'orange</p>
+                        <hr>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Fricassée d'escargot</h3>
+                                <p>Au piment d'Espelette</p>
+                            </hgroup>
                             <div class="price">
-                            <p>25€</p>
+                                <p>25€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Velouté de légumes d'antan</h3>
-                            <p>Carotte, panais, topinambour</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Foie gras de canard mi-cuit</h3>
+                                <p>Et ses copeaux de truffe noire</p>
+                            </hgroup>
                             <div class="price">
-                            <p>35€</p>
+                                <p>35€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Soupe à l'oignon</h3>
-                            <p>Revisitée</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Oeuf au plat</h3>
+                                <p>Assaisonné à la truffe sur lit de caviar</p>
+                            </hgroup>
                             <div class="price">
-                            <p>20€</p>
+                                <p>20€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="menu__parts menu__parts--2">
                         <h5>Plats</h5>
-                        <div class="card_container">
-                            <h3>Coquilles Saint-Jacques</h3>
-                            <p>Accompagnées d'une purée de panais</p>
+                        <hr>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Filet de boeuf aux herbes</h3>
+                                <p>Accompagné de sa ribambelle de légumes</p>
+                            </hgroup>
                             <div class="price">
-                            <p>40€</p>
+                                <p>40€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Magret de canard</h3>
-                            <p>Et parmentier de pommes de terre</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Parmentier de queue de boeuf</h3>
+                                <p>À la truffe noire sur sa purée de panais</p>
+                            </hgroup>
                             <div class="price">
-                            <p>35€</p>
+                                <p>35€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Pigeonneau d’Ille-et-Vilaine</h3>
-                            <p>Sur son lit de gnocchis aux légumes</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Filet de turbot</h3>
+                                <p>Aux agrumes</p>
+                            </hgroup>
                             <div class="price">
-                            <p>44€</p>
+                                <p>44€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="menu__parts menu__parts--3">
                         <h5>Desserts</h5>
-                        <div class="card_container">
-                            <h3>Pétales de violettes glacés</h3>
-                            <p>Et purée de noisettes</p>
+                        <hr>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Paris-Brest</h3>
+                                <p>Revisité</p>
+                            </hgroup>
                             <div class="price">
-                            <p>18€</p>
+                                <p>18€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Fondant au chocolat</h3>
-                            <p>Revisité</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Macaron au chocolat d'exception</h3>
+                                <p>Et glace à la vanille de Madagascar</p>
+                            </hgroup>
                             <div class="price">
-                            <p>22€</p>
+                                <p>22€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <div class="card_container">
-                            <h3>Millefeuille croustillant</h3>
-                            <p>Myrtilles et pâte d’amande</p>
+                        <div class="card_container--page card-menu">
+                            <hgroup>
+                                <h3>Mousse au chocolat</h3>
+                                <p>Au piment d'Espelette et à la truffe noire</p>
+                            </hgroup>
                             <div class="price">
-                            <p>23€</p>
+                                <p>23€</p>
+                            </div>
+                            <div class="caption-check-box">
+                                <i class="fas fa-check-circle"></i>
                             </div>
                         </div>
-                        <input class="exploration" type="button" value="Commander">
+                    </div>
+                        <div class="button_box">
+                            <input class="btn" type="button" value="Commander">
+                        </div>
                     </div>
                 </section>
                 <footer class="footer_container">
                     <img class="logo_title" src="images/logo/ohmyfood@2x.svg" alt="Logo de Ohmyfood">
                     <ul>
-                        <li><p><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</p></a></li>
-                        <li><p><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</p></a></li>
-                        <li><p>Mentions légales</p></li>
-                        <li><p>Contact</p></li>
+                        <li><a href="#"><p><i class="fas fa-utensils"></i><span class="footer_text">Proposer un restaurant</span></p></a></li>
+                        <li><a href="#"><p><i class="fas fa-hands-helping"></i><span class="footer_text">Devenir partenaire</span></p></a></li>
+                        <li><p><span class="footer_text2">Mentions légales</span></p></li>
+                        <li><a href="mailto:contact@ohmyfood.com?subject=Ohmyfood!"><p><span class="footer_text2">Contact</span></p></a></li>
                     </ul>
                 </footer>
             </main>
