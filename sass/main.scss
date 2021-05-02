@@ -148,7 +148,7 @@
    transition-duration: 0.1s;
    margin: 2.5rem;
    cursor: pointer;
-   height: 100%;
+   height: 90%;
    width: 91%;
 }
 
@@ -375,9 +375,21 @@ p {
       display: block;
       flex: 0 0 15%;
       max-width: 70px;
+      //transform: translateX(0);
       overflow: hidden;
       transform-origin: 50% 50%;
    }
+/* .caption-check-box {
+      animation: caption-check-box ease-in-out .3s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+      background-color: $color-tertiary;
+      display: block;
+      flex: 0 0 15%;
+      max-width: 70px;
+      overflow: hidden;
+      transform-origin: 50% 50%;
+   } */
 .fa-check-circle {
       animation: check-box ease-in-out .3s;
       animation-iteration-count: 1;
@@ -390,22 +402,33 @@ p {
 }
 
 @media screen and (min-width: 1024px) {
-   .cards_container, .menu--page {
+   .cards_container {
      display: flex;
-     flex-direction: column;
-     justify-content: space-evenly;
+     flex-flow: row wrap;
+     justify-content: space-between;
    }
-   .filter, .card {
-      max-width: 40%;
+   .cards_container > a {
+      display: block;
+      width: 50%;
+      height: 50%;
    }
+
    .filter_text {
       font-size: 1.5rem;
    }
  }
 
  @media screen and (min-width: 1440px)  {
-   .filter, .menu__parts {
+   .menu_container {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+   .filter {
       max-width: 26%;
+   }
+   .menu__parts {
+      max-width: 33%;
    }
    .filter_text {
       font-size: 1.2rem;
