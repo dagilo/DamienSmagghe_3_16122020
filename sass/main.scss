@@ -141,14 +141,6 @@
    width: 100%;
 }
 
-@media screen and (min-width: map-get($breakpoints, tablet)) {
-   .cards_container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-   }
-}
-
 .card {
    position: relative;
    background-color: white;
@@ -179,12 +171,6 @@
       height: 500px;
       object-fit: cover;
    }
-}
-
-@media screen and (min-width: map-get($breakpoints, tablet)) {
-.card_image {
-   
-}
 }
 
 .card_tag {
@@ -313,21 +299,19 @@ i {
    flex-wrap: nowrap;
    justify-content: space-between;
    overflow: hidden;
-
-   hgroup {
+  hgroup {
       flex:1;
       overflow: hidden;
       padding: 10px;
       text-overflow: ellipsis;
       white-space: nowrap;
+      padding-right: 100px;
    }
-
    h3 {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
    }
-
    p {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -360,21 +344,31 @@ i {
 
 .card-menu {
    &:hover {
-      box-shadow: $btn1-shadow-hover;
-   hgroup {
+      box-shadow: $btn1-shadow-hover;      
+hgroup {
       flex: 1;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
    }
-   .price {
-      animation: caption-check-box-price ease .3s;
+h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+.price {
+      animation: caption-check-box-price ease-in-out .3s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       min-width: 100px;
    }
-   .caption-check-box {
-      animation: caption-check-box ease .3s;
+.caption-check-box {
+      animation: caption-check-box ease-in-out .3s;
       animation-fill-mode: forwards;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
@@ -384,8 +378,8 @@ i {
       overflow: hidden;
       transform-origin: 50% 50%;
    }
-   .fa-check-circle {
-      animation: check-box ease .3s;
+.fa-check-circle {
+      animation: check-box ease-in-out .3s;
       animation-iteration-count: 1;
       background-color: $color-tertiary;
       left: 27%;
@@ -395,4 +389,25 @@ i {
 }
 }
 
+@media screen and (min-width: 1024px) {
+   .cards_container, .menu--page {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+   }
+   .filter, .card {
+      max-width: 40%;
+   }
+   .filter_text {
+      font-size: 1.5rem;
+   }
+ }
 
+ @media screen and (min-width: 1440px)  {
+   .filter, .menu__parts {
+      max-width: 26%;
+   }
+   .filter_text {
+      font-size: 1.2rem;
+   }
+ }

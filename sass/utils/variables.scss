@@ -1,7 +1,29 @@
-$breakpoints:(
-    mobile-small: 320px,
-    mobile : 640px,
-    tablet: 768px,
-    tablet-landscape: 1024,
-    desktop: 1280px,
-    );
+$color-primary: #9345DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$color-new: #269D80;
+$color-text: #606060;
+$grey: #eaeaea;
+$light-grey: #f6f6f6;
+$dark-grey: #d5d5d5;
+$very-dark-grey: #525050;
+$light-black:#353535;
+
+$font-primary: Shrikhand, sans-serif;
+$font-secondary: Roboto, sans-serif;
+
+$radius: 11px;
+$button-shadow: 1px 1px 10px #c0bfbf;
+
+$anim-duration: 1.5s;
+$anim-short: 0.3s;
+$anim-big-delay: 2.5s;
+$time-delay: 0.8s;
+
+$btn1-shadow-hover: 0 5px 15px 0 darken($grey, 35);
+
+$cd-bars: #15DEA5;
+$num-items : 4;
+$anim-dur: 800ms;
+$anim-delay: $anim-dur / $num-items;
