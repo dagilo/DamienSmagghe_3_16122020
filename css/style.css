@@ -113,6 +113,56 @@
     opacity: 1;
   }
 }
+.container_loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  width: 100vw;
+  max-height: 100%;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  animation: loader 10ms ease-out 3000ms forwards;
+}
+
+.loader {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 100px;
+}
+.loader__item {
+  height: 20px;
+  border-radius: 10vh;
+  margin-bottom: 10px;
+  animation: item 800ms backwards 4 ease-in-out alternate-reverse;
+}
+.loader__item--1 {
+  animation-delay: 200ms;
+}
+.loader__item--2 {
+  animation-delay: 400ms;
+}
+.loader__item--3 {
+  animation-delay: 600ms;
+}
+.loader__item--4 {
+  animation-delay: 800ms;
+}
+.loader__item--1 {
+  background-color: #15DEA5;
+}
+.loader__item--2 {
+  background-color: #9345DC;
+}
+.loader__item--3 {
+  background-color: #FF79DA;
+}
+.loader__item--4 {
+  background-color: #99E2D0;
+}
+
 body {
   font-family: Roboto, sans-serif;
   color: #000000;
@@ -576,26 +626,32 @@ header, main, footer {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.card-menu .price {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: bold;
+  /* justify-content: flex-end;
+  padding-right: 10px;
+  text-align: right; */
+  transform: translateX(0px);
+  transition: transform 0.5s;
+}
 
 .caption-check-box {
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
-  display: none;
-  position: relative;
+  background-color: #99E2D0;
+  transform: translate(70px);
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  display: flex;
+  transition: transform 0.3s ease-in-out;
 }
 .caption-check-box i {
   color: white;
   font-size: 24px;
   transform: rotate(360deg);
-}
-.caption-check-box .price {
-  align-items: center;
-  display: flex;
-  font-size: 1.125rem;
-  font-weight: bold;
-  justify-content: flex-end;
-  padding-right: 10px;
-  text-align: right;
 }
 
 .card-menu:hover {
@@ -629,21 +685,23 @@ header, main, footer {
   white-space: nowrap;
 }
 .card-menu:hover .price {
-  animation: caption-check-box-price ease-in-out 0.3s;
+  /* animation: caption-check-box-price ease-in-out .3s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  min-width: 100px;
+  min-width: 100px; */
+  transform: translateX(-50px);
 }
 .card-menu:hover .caption-check-box {
-  animation: caption-check-box ease-in-out 0.3s;
+  /* animation: caption-check-box ease-in-out .3s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  background-color: #99E2D0;
+  background-color: $color-tertiary;
   display: block;
   flex: 0 0 15%;
   max-width: 70px;
-  overflow: hidden;
-  transform-origin: 50% 50%;
+  //overflow: hidden;
+  transform-origin: 50% 50%; */
+  transform: translateX(0);
 }
 .card-menu:hover .fa-check-circle {
   animation: check-box ease-in-out 0.3s;
@@ -654,6 +712,26 @@ header, main, footer {
   top: 30%;
 }
 
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .filter {
+    width: 80%;
+  }
+
+  .filter_text {
+    padding: 1rem 1rem 1rem 5rem;
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    height: 3rem;
+    padding: 0 2rem;
+    font-size: 1.2rem;
+  }
+}
 @media screen and (min-width: 1024px) {
   .cards_container {
     display: flex;

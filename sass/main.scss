@@ -317,26 +317,35 @@ i {
       text-overflow: ellipsis;
       white-space: nowrap;
    }
+
+   .price {
+      //align-items: center;
+      display: flex;
+      font-size: 1.125rem;
+      font-weight: bold;
+      /* justify-content: flex-end;
+      padding-right: 10px;
+      text-align: right; */
+      transform: translateX(0px);
+      transition: transform 0.5s;
+   }
 }
 
 .caption-check-box {
    border-bottom-right-radius: 15px;
    border-top-right-radius: 15px;
-   display: none;
-   position: relative;
+   background-color: $color-tertiary;
+   transform: translate(70px);
+   justify-content: center;
+   align-items: center;
+   width: 70px;
+   display: flex;
+   //position: relative;
+   transition: transform 0.3s ease-in-out;
    i{
       color: white;
       font-size: 24px;
       transform: rotate(360deg);
-   }
-   .price {
-      align-items: center;
-      display: flex;
-      font-size: 1.125rem;
-      font-weight: bold;
-      justify-content: flex-end;
-      padding-right: 10px;
-      text-align: right;
    }
 }
 
@@ -345,40 +354,42 @@ i {
 .card-menu {
    &:hover {
       box-shadow: $btn1-shadow-hover;      
-hgroup {
-      flex: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-   }
-h3 {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-   }
-p {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-   }
-.price {
-      animation: caption-check-box-price ease-in-out .3s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-      min-width: 100px;
-   }
-.caption-check-box {
-      animation: caption-check-box ease-in-out .3s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: 1;
-      background-color: $color-tertiary;
-      display: block;
-      flex: 0 0 15%;
-      max-width: 70px;
-      //transform: translateX(0);
-      overflow: hidden;
-      transform-origin: 50% 50%;
-   }
+      hgroup {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+         }
+      h3 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+         }
+      p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+         }
+      .price {
+            /* animation: caption-check-box-price ease-in-out .3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            min-width: 100px; */
+            transform: translateX(-50px);
+
+         }
+      .caption-check-box {
+            /* animation: caption-check-box ease-in-out .3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            background-color: $color-tertiary;
+            display: block;
+            flex: 0 0 15%;
+            max-width: 70px;
+            //overflow: hidden;
+            transform-origin: 50% 50%; */
+            transform: translateX(0);
+         }
 /* .caption-check-box {
       animation: caption-check-box ease-in-out .3s;
       animation-fill-mode: forwards;
@@ -390,14 +401,32 @@ p {
       overflow: hidden;
       transform-origin: 50% 50%;
    } */
-.fa-check-circle {
-      animation: check-box ease-in-out .3s;
-      animation-iteration-count: 1;
-      background-color: $color-tertiary;
-      left: 27%;
-      position: absolute;
-      top: 30%;
+   .fa-check-circle {
+         animation: check-box ease-in-out .3s;
+         animation-iteration-count: 1;
+         background-color: $color-tertiary;
+         left: 27%;
+         position: absolute;
+         top: 30%;
+      }
    }
+}
+
+@media screen and (max-width: 640px) {
+   h1 {
+      font-size: 1.5rem;
+   }
+   .filter {
+      width: 80%;
+   }
+   .filter_text {
+      padding: 1rem 1rem 1rem 5rem;
+      font-size: 1.3rem;
+   }
+   .btn {
+      height: 3rem;
+      padding: 0 2rem;
+      font-size: 1.2rem;
 }
 }
 
